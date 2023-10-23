@@ -3,10 +3,12 @@ import { useEffect, useState } from "react";
 import { useDrag } from "react-dnd";
 import { useDrop } from "react-dnd";
 
+
+
 const Particle = ({ type, className }) => {
 	const [{ isDragging }, drag] = useDrag({
 		type,
-		item: { type },
+		item: { type: type },
 		collect: (monitor) => ({
 			isDragging: !!monitor.isDragging(),
 		}),
@@ -16,9 +18,9 @@ const Particle = ({ type, className }) => {
 		<div
 			ref={drag}
 			className={`flex justify-center items-center ${
-				type === "electron" ? "bg-blue-600" : ""
-			} ${type === "proton" ? "bg-red-500" : ""} ${
-				type === "neutron" ? "bg-stone-300" : ""
+				type === "electron" ? "bg-blue-600 text-white text-3xl" : ""
+			} ${type === "proton" ? "bg-red-500 text-black text-3xl" : ""} ${
+				type === "neutron" ? "bg-gray-300" : ""
 			} rounded-full border-black border-2 h-16 w-16 ${className}`}
 			style={{
 				cursor: "pointer",
@@ -31,7 +33,7 @@ const Particle = ({ type, className }) => {
 	);
 };
 
-const CircularDropTarget = () => {
+const CircularDropTarget = ({ electronCount, setElectronCount}) => {
 	const [particles, setParticles] = useState([]);
 	const [hovered, setHovered] = useState(false);
 	const [, drop] = useDrop({
@@ -49,6 +51,7 @@ const CircularDropTarget = () => {
 				console.log("Electron dropped on the circular line!");
 				setParticles([...particles, item]);
 				setHovered(false);
+				setElectronCount(electronCount - 1);
 			}
 		},
 	});
@@ -56,8 +59,8 @@ const CircularDropTarget = () => {
 	return (
 		<div
 			ref={drop}
-			className={`absolute rounded-full border-black border-2 h-auto w-[50%] aspect-square z-3 ${
-				hovered ? "bg-gray-300" : ""
+			className={` absolute rounded-full border-black border-2 h-auto w-[40%] aspect-square z-3 ${
+				hovered ? "bg-gray-300" : "bg-accent"
 			}`}>
 			{particles.map((particle, index) => {
 				if (index === 0) {
@@ -108,7 +111,7 @@ const CircularDropTarget = () => {
 	);
 };
 
-const InnerCircleDropTarget = () => {
+const InnerCircleDropTarget = ({ electronCount, setElectronCount }) => {
 	const [particles, setParticles] = useState([]);
 	const [hovered, setHovered] = useState(false);
 
@@ -126,6 +129,7 @@ const InnerCircleDropTarget = () => {
 			if (particles.length < 3) {
 				console.log("Electron dropped on the inner circle!");
 				setParticles([...particles, item]);
+				setElectronCount(electronCount - 1);
 				setHovered(false);
 			}
 		},
@@ -134,8 +138,8 @@ const InnerCircleDropTarget = () => {
 	return (
 		<div
 			ref={drop}
-			className={`absolute rounded-full border-black border-2 h-auto w-[25%] aspect-square z-40 ${
-				hovered ? "bg-gray-300" : "bg-white"
+			className={`absolute rounded-full border-black border-2 h-auto w-[20%] aspect-square z-40 ${
+				hovered ? "bg-gray-300" : "bg-accent"
 			}`}>
 			{particles.map((particle, index) => {
 				if (index === 0) {
@@ -170,7 +174,7 @@ const InnerCircleDropTarget = () => {
 	);
 };
 
-const CenterDrop = () => {
+const CenterDrop = ({ setProtonCount, setNeutronCount, protonCount, neutronCount }) => {
 	const [protons, setProtons] = useState([]);
 	const [neutrons, setNeutrons] = useState([]);
 
@@ -181,9 +185,11 @@ const CenterDrop = () => {
 			if (item.type === "proton" && protons.length < 4) {
 				console.log("Proton dropped in the center!");
 				setProtons([...protons, item]);
+				setProtonCount(protonCount - 1);
 			} else if (item.type === "neutron" && neutrons.length < 4) {
 				console.log("Neutron dropped in the center!");
 				setNeutrons([...neutrons, item]);
+				setNeutronCount(neutronCount - 1);
 			}
 		},
 	});
@@ -191,7 +197,7 @@ const CenterDrop = () => {
 	return (
 		<div
 			ref={drop}
-			className="particle-list absolute flex justify-center items-center flex-wrap w-[150px] min-h-[10rem] z-50">
+			className="particle-list absolute flex justify-center items-center flex-wrap w-[150px] min-h-[10rem] z-50 ">
 			{protons.map((particle, index) => (
 				<Particle
 					key={index}
@@ -214,21 +220,72 @@ const Atom = () => {
 	const [protonCount, setProtonCount] = useState(4);
 	const [neutronCount, setNeutronCount] = useState(4);
 	const [electronCount, setElectronCount] = useState(8);
+	console.log(protonCount, neutronCount, electronCount);
+
+	useEffect(() => {
+		if (protonCount === 0 && neutronCount === 0 && electronCount === 0) {
+			alert("You have successfully built an atom!");
+		}
+	}, [protonCount, neutronCount, electronCount]);
 	return (
 		<>
-			<div className="h-screen mx-auto">
-				<h2>Build an Atom</h2>
+			<div className="h-screen mx-auto bg-accent">
+				<h2 className="text-3xl pt-5 px-5"> Susunlah Atom di bawah ini agar sesuai</h2>
 
-				<div className="atom-container relative h-full flex flex-col justify-center items-center">
-					{" "}
-					<div className="self-start">
-						<Particle type="proton" />
-						<Particle type="neutron" />
-						<Particle type="electron" />
+				<div className="atom-container relative min-h-[80vh] flex flex-col justify-center items-center ">
+					<div className="self-start p-6 rounded-xl bg-primary ms-2 md:block hidden">
+						<h2 className="mb-3">Partikel</h2>
+						<div className="flex justify-between items-center">
+							<Particle type="proton" />{" "}
+							<span className="mx-2 text-white">
+								{protonCount}
+							</span>
+						</div>
+						<div className="flex justify-between items-center">
+							<Particle type="neutron" />{" "}
+							<span className="mx-2 text-white">
+								{neutronCount}
+							</span>
+						</div>
+						<div className="flex justify-between items-center">
+							<Particle type="electron" />{" "}
+							<span className="mx-2 text-white">
+								{electronCount}
+							</span>
+						</div>
 					</div>
-					<CircularDropTarget />
-					<InnerCircleDropTarget />
-					<CenterDrop />
+					{/* particle mobile version */}
+					<div className="self-center p-6 rounded-xl bg-primary ms-2 md:hidden absolute top-0">
+						<h2 className="mb-3">Partikel</h2>
+						<div className="flex justify-between items-center">
+							<Particle type="proton" />{" "}
+							<span className="mx-2 text-white">
+								{protonCount}
+							</span>
+							<Particle type="neutron" />{" "}
+							<span className="mx-2 text-white">
+								{neutronCount}
+							</span>
+							<Particle type="electron" />{" "}
+							<span className="mx-2 text-white">
+								{electronCount}
+							</span>
+						</div>
+						</div>
+					<CircularDropTarget
+						electronCount={electronCount}
+						setElectronCount={setElectronCount}
+					/>
+					<InnerCircleDropTarget
+						electronCount={electronCount}
+						setElectronCount={setElectronCount}
+					/>
+					<CenterDrop
+						setProtonCount={setProtonCount}
+						setNeutronCount={setNeutronCount}
+						protonCount={protonCount}
+						neutronCount={neutronCount}
+					/>
 				</div>
 			</div>
 		</>

@@ -4,6 +4,8 @@ import Chemistry from "./pages/chemistry";
 import Atom from "./pages/chemistry/materi/atom";
 import AtomGame from "./pages/chemistry/games/atom";
 import Navbar from "./components/Navbar";
+
+
 function App() {
 	return <>
     <Router>

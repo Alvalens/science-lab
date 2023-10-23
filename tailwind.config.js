@@ -16,6 +16,7 @@ export default {
 			yellow: colors.yellow,
 			red: colors.red,
 			green: colors.green,
+			blue: colors.blue,
 
 		},
 		extend: {},
