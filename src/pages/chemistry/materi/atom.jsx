@@ -9,9 +9,9 @@ const MateriAtom = () => {
 						<div className="grid grid-cols-1 md:grid-cols-2 w-full space-x-3">
 							{/* card */}
 							<div>
-								<div className="w-full min-h-[40%]  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-14 ">
+								<div className="w-full min-h-[40%]  bg-white border border-gray-200 rounded-lg shadow  mt-14 ">
 									<div className="px-5 pb-5">
-										<h5 className="text-start text-xl font-semibold tracking-tight text-gray-900 dark:text-white py-4">
+										<h5 className="text-start text-xl font-semibold tracking-tight text-gray-900 py-4">
 											Pengertian Atom
 										</h5>
 										<p>
@@ -27,9 +27,9 @@ const MateriAtom = () => {
 										</p>
 									</div>
 								</div>
-								<div className="w-full min-h-[40%]  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-5 ">
+								<div className="w-full min-h-[40%]  bg-white border border-gray-200 rounded-lg shadow  mt-5 ">
 									<div className="px-5 pb-5">
-										<h5 className="text-start text-xl font-semibold tracking-tight text-gray-900 dark:text-white py-4">
+										<h5 className="text-start text-xl font-semibold tracking-tight text-gray-900 py-4">
 											Struktur Atom
 										</h5>
 										<p>
@@ -45,9 +45,9 @@ const MateriAtom = () => {
 								</div>
 							</div>
 							{/* gambar atom */}
-							<div className="w-full  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-14 ">
+							<div className="w-full  bg-white border border-gray-200 rounded-lg shadow  mt-14 ">
 								<div className="px-5 pb-5">
-									<h5 className="text-start text-xl font-semibold tracking-tight text-gray-900 dark:text-white py-4">
+									<h5 className="text-start text-xl font-semibold tracking-tight text-gray-900 py-4">
 										Gambar Atom
 									</h5>
 									<img
@@ -59,9 +59,9 @@ const MateriAtom = () => {
 							</div>
 						</div>
 						{/* video atom */}
-						<div className="w-full  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-14 ">
+						<div className="w-full  bg-white border border-gray-200 rounded-lg shadow  mt-14 ">
 							<div className="px-5 pb-5">
-								<h5 className="text-start text-xl font-semibold tracking-tight text-gray-900 dark:text-white py-4">
+								<h5 className="text-start text-xl font-semibold tracking-tight text-gray-900 py-4">
 									Video Atom
 								</h5>
 								<div className="flex flex-col md:flex-row justify-center items-start">
@@ -76,7 +76,7 @@ const MateriAtom = () => {
 									</div>
 									{/* penjelasan */}
 									<div className="w-full md:w-[50%] ps-4">
-										<p className="text-start text-xl font-semibold tracking-tight text-gray-900 dark:text-white pb-3">
+										<p className="text-start text-xl font-semibold tracking-tight text-gray-900 pb-3">
 											Penjelasan
 										</p>
 										<p>
@@ -95,9 +95,9 @@ const MateriAtom = () => {
 							</div>
 						</div>
 						{/* game menyusun atom */}
-						<div className="w-full  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-14 ">
+						<div className="w-full  bg-white border border-gray-200 rounded-lg shadow  mt-14 ">
 							<div className="px-5 pb-5">
-								<h5 className="text-start text-xl font-semibold tracking-tight text-gray-900 dark:text-white py-4">
+								<h5 className="text-start text-xl font-semibold tracking-tight text-gray-900 py-4">
 									Game Menyusun Atom
 								</h5>
 								<a href="atom/game">
@@ -117,7 +117,7 @@ const MateriAtom = () => {
 									</div>
 									
 									<div className="w-full md:w-[50%] ps-4">
-										<p className="text-start text-xl font-semibold tracking-tight text-gray-900 dark:text-white pb-3">
+										<p className="text-start text-xl font-semibold tracking-tight text-gray-900 pb-3">
 											Penjelasan
 										</p>
 										<p>

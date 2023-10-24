@@ -78,6 +78,10 @@ const MoleculeBuilder = () => {
 
 	return (
 		<div className="molecule-builder flex flex-col justify-center items-center min-h-[80vh]">
+			<h2 className="text-3xl pb-5">
+				Susunlah Atom di bawah ini agar Membentuk sebuah molekul!
+			</h2>
+
 			{/* result */}
 			<div className="w-full h-auto md:w-[50%] md:h-[400px] rounded-2xl bg-primary flex flex-col justify-start items-center">
 				{/* atoms */}
