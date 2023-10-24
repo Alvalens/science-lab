@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FlaskConical } from "lucide-react";
-import HeaderImage from"../../public/images/header.png";
+import HeaderImage from"../assets/images/header.png";
 const Home = () => {
 	return (
 		<>
@@ -39,7 +39,7 @@ const Home = () => {
 								to="/kimia"
 								className=" p-4 m-4 bg-emerald-500 rounded-xl hover:scale-105 transition-all duration-300 ease-in-out">
 								<div className=" p-4 m-4 bg-emerald-600 rounded-xl hover:scale-105 transition-all duration-300 ease-in-out">
-									<FlaskConical className="w-1/2 h-1/2 mx-auto text-emerald-100 pt-10" />
+									<FlaskConical className="w-1/2 h-1/2 mx-auto text-emerald-100 pt-10 hover:scale-105 transition-all duration-300 ease-in-out" />
 									<h2 className="text-5xl text-center pt-10 text-emerald-100">
 										Kimia
 									</h2>
