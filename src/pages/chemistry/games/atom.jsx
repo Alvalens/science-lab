@@ -3,7 +3,22 @@ import { useEffect, useState } from "react";
 import { useDrag } from "react-dnd";
 import { useDrop } from "react-dnd";
 
-
+const WinScreen = () => {
+	return (
+		<div className="z-[9999] fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
+			<div className="bg-white rounded-lg shadow-lg p-8 text-center">
+				<h2 className="text-3xl font-bold text-center">
+					Kamu berhasil membuat atom! 🎉
+				</h2>
+				<button
+					className="bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded mt-5"
+					onClick={() => window.location.reload()}>
+					Mulai Ulang
+				</button>
+			</div>
+		</div>
+	);
+};
 
 const Particle = ({ type, className }) => {
 	const [{ isDragging }, drag] = useDrag({
@@ -222,11 +237,11 @@ const Atom = () => {
 	const [electronCount, setElectronCount] = useState(8);
 	console.log(protonCount, neutronCount, electronCount);
 
-	useEffect(() => {
+
 		if (protonCount === 0 && neutronCount === 0 && electronCount === 0) {
-			alert("You have successfully built an atom!");
+			return <WinScreen />;
 		}
-	}, [protonCount, neutronCount, electronCount]);
+
 	return (
 		<>
 			<div className="h-screen mx-auto bg-accent pt-16">
