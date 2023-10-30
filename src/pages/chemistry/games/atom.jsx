@@ -229,7 +229,7 @@ const Atom = () => {
 	}, [protonCount, neutronCount, electronCount]);
 	return (
 		<>
-			<div className="h-screen mx-auto bg-accent">
+			<div className="h-screen mx-auto bg-accent pt-16">
 				<h2 className="text-3xl pt-5 px-5"> Susunlah Atom di bawah ini agar sesuai</h2>
 
 				<div className="atom-container relative min-h-[80vh] flex flex-col justify-center items-center ">

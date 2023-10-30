@@ -8,8 +8,8 @@ const MateriAtom = () => {
 						<h1 className="text-3xl font-bold">Struktur Atom</h1>
 						<div className="grid grid-cols-1 md:grid-cols-2 w-full space-x-3">
 							{/* card */}
-							<div>
-								<div className="w-full min-h-[40%]  bg-white border border-gray-200 rounded-lg shadow  mt-14 ">
+							<div className="flex flex-col justify-between ">
+								<div className="w-full min-h-[40%] bg-white border border-gray-200 rounded-lg shadow  mt-14 ">
 									<div className="px-5 pb-5">
 										<h5 className="text-start text-xl font-semibold tracking-tight text-gray-900 py-4">
 											Pengertian Atom

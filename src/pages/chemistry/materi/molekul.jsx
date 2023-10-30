@@ -50,7 +50,7 @@ const MateriMolekul = () => {
 							<div className="w-full  bg-white border border-gray-200 rounded-lg shadow mt-14 ">
 								<div className="px-5 pb-5">
 									<h5 className="text-start text-xl font-semibold tracking-tight text-gray-900 py-4">
-										Gambar Molekul Oksigen
+										Gambar Molekul Air
 									</h5>
 									<img
 										src="https://www.quipper.com/id/blog/wp-content/uploads/2019/08/Bentuk-Molekul-Kimia-Kelas-12-1.png"
