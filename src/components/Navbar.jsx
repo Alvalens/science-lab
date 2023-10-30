@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
+import reactLogo from "../assets/react.svg";
 
 const Navbar = () => {
 	return (
-		<nav className="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
-			<div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+		<nav className="fixed w-full z-50 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+			<div className="container mx-auto flex flex-wrap items-center justify-between p-4" >
 				<a href="#" className="flex items-center">
 					<img
-						src="https://flowbite.com/docs/images/logo.svg"
+						src={reactLogo}
 						className="h-8 mr-3"
 						alt="Flowbite Logo"
 					/>
@@ -53,6 +54,20 @@ const Navbar = () => {
 								to="/kimia"
 								className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
 								Kimia
+							</Link>
+						</li>
+						<li>
+							<Link
+								to="/"
+								className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+								Fisika
+							</Link>
+						</li>
+						<li>
+							<Link
+								to="/"
+								className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+								Biologi
 							</Link>
 						</li>
 					</ul>
