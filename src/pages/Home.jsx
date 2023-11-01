@@ -8,7 +8,7 @@ const Home = () => {
 		<>
 			{/* main section */}
 			<div className="bg-white">
-				<div className="container mx-auto flex flex-row justify-center items-center">
+				<div className="container mx-auto flex flex-row justify-center items-center h-screen">
 					<div className="flex flex-col items-start justify-center">
 						<h1 className="text-6xl font-bold z-10  p-4">
 							Welcome to Science Lab

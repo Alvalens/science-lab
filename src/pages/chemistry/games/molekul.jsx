@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Back from "../../../components/Back";
 
 const formatChemicalFormula = (atoms) => {
 	const atomSymbols = {
@@ -83,6 +84,7 @@ const MoleculeBuilder = () => {
 
 	return (
 		<div className="molecule-builder flex flex-col justify-center items-center min-h-[80vh]">
+			<Back/>
 			<h2 className="text-3xl pb-5">
 				Susunlah Atom di bawah ini agar Membentuk sebuah molekul!
 			</h2>

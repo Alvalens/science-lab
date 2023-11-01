@@ -1,7 +1,9 @@
 
+import Back from "../../../components/Back";
 const MateriMolekul = () => {
 	return (
 		<>
+		<Back/>
 			<div className="bg-accent">
 				<div className="container mx-auto">
 					<div className="flex flex-col items-center justify-center min-h-screen">

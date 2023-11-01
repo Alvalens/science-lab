@@ -2,6 +2,7 @@
 import {useState } from "react";
 import { useDrag } from "react-dnd";
 import { useDrop } from "react-dnd";
+import Back from "../../../components/Back";
 
 const WinScreen = () => {
 	return (
@@ -244,6 +245,7 @@ const Atom = () => {
 
 	return (
 		<>
+		<Back/>
 			<div className="h-screen mx-auto bg-accent pt-16">
 				<h2 className="text-3xl pt-5 px-5"> Susunlah Atom di bawah ini agar sesuai</h2>
 
