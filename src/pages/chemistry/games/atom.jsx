@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from "react";
+import {useState } from "react";
 import { useDrag } from "react-dnd";
 import { useDrop } from "react-dnd";
 

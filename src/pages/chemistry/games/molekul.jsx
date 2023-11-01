@@ -4,6 +4,7 @@ const formatChemicalFormula = (atoms) => {
 	const atomSymbols = {
 		hidrogen: "H",
 		oksigen: "O",
+		karbon: "C",
 	};
 
 	const formula = [];
@@ -21,6 +22,7 @@ const MoleculeBuilder = () => {
 	const [atomCounts, setAtomCounts] = useState({
 		hidrogen: 0,
 		oksigen: 0,
+		karbon: 0,
 		// Add more atom types as needed
 	});
 	const [result, setResult] = useState(null);
@@ -28,11 +30,14 @@ const MoleculeBuilder = () => {
 	// Define predefined molecules and their required atom combinations
 	const molecules = [
 		{ name: "Air", atoms: { hidrogen: 2, oksigen: 1 } },
-		// Define more molecules here
+		{ name: "Karbondioksida", atoms: { karbon: 1, oksigen: 2 } },
+		{ name: "Metana", atoms: { karbon: 1, hidrogen: 4 } },
+		{ name: "Glukosa", atoms: { karbon: 6, hidrogen: 12, oksigen: 6 } },
+		
 	];
 
 	const handleAtomClick = (atomType) => {
-		if (atomCounts[atomType] < 4) {
+		if (atomCounts[atomType] < 12) {
 			// Limit the number of atoms (you can change the limit)
 			setAtomCounts({
 				...atomCounts,
@@ -130,6 +135,11 @@ const MoleculeBuilder = () => {
 					onClick={() => handleAtomClick("oksigen")}
 					className="rounded-xl bg-gray-100 px-3 py-1 text-black">
 					oksigen (O)
+				</button>
+				<button
+					onClick={() => handleAtomClick("karbon")}
+					className="rounded-xl bg-red-100 px-3 py-1 text-black">
+					karbon (C)
 				</button>
 			</div>
 			<button
