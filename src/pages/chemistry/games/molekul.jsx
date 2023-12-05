@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Back from "../../../components/Back";
 
 const formatChemicalFormula = (atoms) => {
@@ -27,7 +27,21 @@ const MoleculeBuilder = () => {
 		// Add more atom types as needed
 	});
 	const [result, setResult] = useState(null);
+	useEffect(() => {
+		const handleResize = () => {
+			if (window.innerWidth < 1000) {
+				// Handle the logic for screen size below 1000px
+				return alert("Harap gunakan laptop atau komputer");
+			}
+		};
 
+		window.addEventListener("resize", handleResize);
+
+		// Cleanup the event listener on component unmount
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, []);
 	// Define predefined molecules and their required atom combinations
 	const molecules = [
 		{ name: "Air", atoms: { hidrogen: 2, oksigen: 1 } },

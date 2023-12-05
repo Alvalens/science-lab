@@ -3,6 +3,7 @@ import {useState } from "react";
 import { useDrag } from "react-dnd";
 import { useDrop } from "react-dnd";
 import Back from "../../../components/Back";
+import { useEffect } from "react";
 
 const WinScreen = () => {
 	return (
@@ -236,12 +237,27 @@ const Atom = () => {
 	const [protonCount, setProtonCount] = useState(4);
 	const [neutronCount, setNeutronCount] = useState(4);
 	const [electronCount, setElectronCount] = useState(8);
-	console.log(protonCount, neutronCount, electronCount);
 
+		useEffect(() => {
+			const handleResize = () => {
+				if (window.innerWidth < 1000) {
+					// Handle the logic for screen size below 1000px
+					return alert("Harap gunakan laptop atau komputer");
+				}
+			};
+
+			window.addEventListener("resize", handleResize);
+
+			// Cleanup the event listener on component unmount
+			return () => {
+				window.removeEventListener("resize", handleResize);
+			};
+		}, []);
 
 		if (protonCount === 0 && neutronCount === 0 && electronCount === 0) {
 			return <WinScreen />;
 		}
+
 
 	return (
 		<>
