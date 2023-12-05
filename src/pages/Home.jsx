@@ -8,12 +8,18 @@ const Home = () => {
 		<>
 			{/* main section */}
 			<div className="bg-white">
-				<div className="container mx-auto flex flex-row justify-center items-center h-screen">
+				<div className="container mx-auto min-h-screen grid grid-cols-1 md:grid-cols-2">
 					<div className="flex flex-col items-start justify-center">
-						<h1 className="text-6xl font-bold z-10  p-4">
+						<h1 className="text-3xl md:text-6xl font-bold z-10  p-4">
 							Welcome to Science Lab
 						</h1>
-						<p className="text-xl z-10  p-4 ">
+						<div className="flex justify-center items-center md:hidden ">
+							<img
+								src={HeaderImage}
+								className="top-0 right-0 w-[80%] h-auto object-cover z-0"
+							/>
+						</div>
+						<p className=" text-lg md:text-xl z-10  p-4 ">
 							Science Lab adalah sebuah aplikasi yang berisi
 							materi-materi pelajaran IPA yang disajikan secara
 							interaktif dan menarik.
@@ -26,10 +32,12 @@ const Home = () => {
 							</a>
 						</div>
 					</div>
-					<img
-						src={HeaderImage}
-						className="top-0 right-0 w-[50%] h-auto object-cover z-0"
-					/>
+					<div className="hidden justify-center items-center md:flex ">
+						<img
+							src={HeaderImage}
+							className="top-0 right-0 w-[100%] h-auto object-cover z-0"
+						/>
+					</div>
 				</div>
 				<Wave color="#DBF3FF" />
 				{/* new section */}
@@ -58,9 +66,9 @@ const Home = () => {
 						</div>
 					</div>
 				</div>
-				<Wave color="#DBF3FF" rotate="true"/>
+				<Wave color="#DBF3FF" rotate="true" />
 			</div>
-			<Footer/>
+			<Footer />
 		</>
 	);
 };
